@@ -1,0 +1,48 @@
+//javascripot execution context
+Global Execution context
+Function Execution context
+eval execution context
+
+Javascript code executes in 2 phases
+1.Memory phase
+Allocates the memory to the variables declared in the program
+2.Execution Phase
+Executes the program
+Ex:
+let val1 = 10
+let val2 =5
+function addNum(num1,num2){
+    let total = num1+num2
+    return total
+}
+let result1 = addNum(val1,val2)
+let result2 = addNum(10,2)
+
+Steps
+1.Global execution (global environment)allocated in this 
+2.Memory phase allocates memory to the variables as below
+    val->undefined
+    val2->undefined
+    addNum->function definition
+    result1->undefined
+    result2->undefined
+3.Execution phase
+    val1->10
+    val2->5
+    addNum//for functions new executional context is created 
+    new variable environment and execution thread 
+    Memory phase
+    val1->undefined
+    val2->undefined
+    total->undefined
+    Execution phase
+    num1->10
+    num2->5
+    total ->15
+    //whenever a funtion returns a value it will be returned to global execution context
+    after function execution the  new executional context will be deleted after execution.
+
+
+    *****callstack********
+    Global execution
+    LIFO // Last In First Out
